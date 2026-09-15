@@ -14,7 +14,7 @@
   - **Atomic Commit Protocol**: Standardized 1-line Conventional Commits upon completing verified units of work.
 - **Core Engineering Skills Suite**:
   - Upstream `tw93/Waza` (`plugins/waza`): The gold-standard software engineering workflow skills.
-  - Local core skills: `using-superpowers`, `caveman`, `simplify`, `using-atomic-commit`.
+  - Local core execution skill: `simplify` (code refactoring for clarity without changing behavior).
 
 ---
 
@@ -34,7 +34,7 @@ Apply symlinks to `~/.codex/` and `~/.agents/skills/`:
 
 ---
 
-## Available Skills
+## Available Skills (Callable via `$`)
 
 | Category | Skill | Purpose |
 | :--- | :--- | :--- |
@@ -46,10 +46,7 @@ Apply symlinks to `~/.codex/` and `~/.agents/skills/`:
 | | `/learn` | Deep research, synthesizing material & compiling sources |
 | | `/read` | Extracting web URLs & reading PDF documents |
 | | `/health` | Engineering health audit & config drift check |
-| **Core Drivers** | `/using-superpowers` | Meta-skill enforcing proactive skill invocation before action |
-| | `/caveman` | Terse communication intensity mode (`lite`, `full`, `ultra`) |
-| | `/simplify` | Refactor code for clarity and maintainability without altering behavior |
-| | `/using-atomic-commit` | Enforces 1-line atomic commits conforming to Conventional Commits v1.0.0 |
+| **Local Tool** | `/simplify` | Refactor code for clarity and maintainability without altering behavior |
 
 ---
 
