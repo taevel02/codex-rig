@@ -28,27 +28,44 @@ Default response mode is **Caveman Full**. Cut output tokens by 65%+. Zero conve
 ## 3. Using-Superpowers & Skill Execution Mandate
 
 <EXTREMELY_IMPORTANT>
-**Invoke relevant or requested skills BEFORE taking any action, exploring files, or writing code.**
-If there is even a 1% chance a skill applies, invoke it immediately.
-Then announce "Using [skill] to [purpose]" and follow the skill's protocol.
+**Invoke relevant or requested skills BEFORE any response or action** — including clarifying questions, exploring the codebase, checking git status, or editing files.
+If you think there is even a 1% chance a skill applies, you ABSOLUTELY MUST invoke it.
+If a skill applies to your task, you do not have a choice. This is not negotiable.
+Then announce "Using [skill] to [purpose]" and follow the skill's protocol exactly. If it has a checklist, create a todo per item.
 </EXTREMELY_IMPORTANT>
+
+### Skill Priority (Process Over Execution)
+
+When multiple skills apply, **process skills come first** — they govern the approach and architecture, then execution skills carry it out:
+- "Build or design feature X" → `/think` first (architecture & planning), then execution skills (`/ui`, `/write`).
+- "Fix bug or regression" → `/hunt` first (systematic root-cause diagnosis), then implement fix.
+- "Refactor or clean up code" → `/simplify` (clarity & cognitive weight reduction), verified via `/check`.
+- "Review, verify, or release" → `/check` (diff inspection, release gates, audit).
 
 ### Anti-Rationalization Gate (Red Flags)
 
-| Rationalization (The Trap) | Reality (The Rule) |
+Any of these thoughts means STOP IMMEDIATELY — you are rationalizing:
+
+| Thought (The Trap) | Reality (The Rule) |
 |---|---|
 | "This is just a simple question" | Questions are tasks. Check for skills BEFORE answering. |
-| "I need more context / files first" | Skill check comes BEFORE exploring context or viewing files. |
+| "I need more context / information first" | Skill check comes BEFORE clarifying questions or exploring context. |
+| "Let me explore the codebase / check files first" | Skills specify HOW to explore context and gather information. Invoke skill first. |
+| "I can check git/files quickly" | Files lack conversation context. Check and invoke skills first. |
 | "This doesn't need a formal skill" | If a skill exists for the task, you MUST use it. |
-| "Quick fix for now, investigate later" | Bugs require `/hunt` root-cause analysis before editing. |
-| "I can write code without a plan" | Architectural or feature builds require `/think` planning first. |
+| "The skill is overkill for this" | Simple tasks quickly become complex. Invoke the skill. |
+| "I'll just do this one quick thing first" | Check and invoke BEFORE touching code or running commands. |
+| "This feels productive" | Undisciplined action wastes time and tokens. Skills enforce rigor. |
+| "I can write code without a plan" | Non-trivial builds require `/think` approved planning before coding. |
+| "Quick fix for now, investigate later" | Bugs require `/hunt` root-cause analysis before editing. No blind patches. |
+| "I remember this skill" | Skills evolve. Read and adhere strictly to the live skill protocol. |
 
 ### Available Skills & Mapping
 
 - **Plan / Architecture / Pre-build Design**: `/think`
   - Use before creating non-trivial features, structural changes, or value judgments.
 - **Root Cause Diagnosis / Bug Fix / Crash Investigation**: `/hunt`
-  - Find root cause before applying fixes. No blind patches.
+  - Systematic debugging; find root cause before applying fixes. No blind patches.
 - **Code Review / PR Check / Release Gates / Audit**: `/check`
   - Inspect diffs, test coverage, and release readiness.
 - **Code Simplification & Refactoring**: `/simplify`

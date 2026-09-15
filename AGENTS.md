@@ -18,4 +18,4 @@ Modular configuration repository tailored specifically for Codex CLI. It provisi
 - **Verification**: Validate shell scripts using `bash -n <script.sh>` after editing.
 
 ### 3. Commit Protocol
-- **Atomic Commits**: Create 1-line Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`) upon completing verified units of work (`using-atomic-commit`).
+- **Atomic Commits**: Create 1-line Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `chore:`) upon completing verified units of work (per `config/AGENTS.md`).
