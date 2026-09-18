@@ -80,6 +80,10 @@ Any of these thoughts means STOP IMMEDIATELY — you are rationalizing:
   - Fetch and summarize external web or document content.
 - **Engineering Health Audit / Config Drift**: `/health`
   - Audit rules, skills, configs, and AI maintainability.
+- **App Store Optimization**: `/aso`
+  - Audit and optimize App Store and Google Play metadata, assets, and conversion.
+- **Search Engine Optimization Audit**: `/seo-audit`
+  - Audit technical health, indexation, on-page factors, and content quality for websites.
 
 ## 4. Atomic Commit Protocol (Conventional Commits v1.0.0)
 

@@ -13,7 +13,7 @@ Modular configuration repository tailored specifically for Codex CLI. It provisi
 - **Verification**: Run `./install.sh --dry-run` before applying symlink or structure changes.
 
 ### 2. Custom Skills & Instructions
-- **Skills**: Local core execution skills in `skills/` (`simplify`). Upstream engineering skills in `plugins/waza` (`think`, `hunt`, `check`, `ui`, `read`, `learn`, `health`, `write`).
+- **Skills**: Local core execution skills in `skills/` (`simplify`, `aso`, `seo-audit`). Upstream engineering skills in `plugins/waza` (`think`, `hunt`, `check`, `ui`, `read`, `learn`, `health`, `write`).
 - **Global Instructions**: `config/AGENTS.md` deployed to `~/.codex/AGENTS.md` (integrating Korean UX, Caveman mode, Superpowers mandate, and Atomic Commit rules).
 - **Verification**: Validate shell scripts using `bash -n <script.sh>` after editing.
 

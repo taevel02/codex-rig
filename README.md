@@ -48,6 +48,7 @@ Apply symlinks to `~/.codex/` and `~/.agents/skills/`:
 | | `/health` | Engineering health audit & config drift check |
 | **Local Tool** | `/simplify` | Refactor code for clarity and maintainability without altering behavior |
 | | `/aso` | Audit and improve App Store and Google Play listings |
+| | `/seo-audit` | Technical, on-page, and content SEO audit for websites |
 
 ---
 
@@ -57,6 +58,7 @@ Apply symlinks to `~/.codex/` and `~/.agents/skills/`:
 - **[obra/superpowers](https://github.com/obra/superpowers)**: Source reference for `/using-superpowers`.
 - **[juliusbrussee/caveman](https://github.com/juliusbrussee/caveman)**: Source reference for `/caveman`.
 - **[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/aso)**: Source adapted for `/aso` (MIT).
+- **[coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills/tree/main/skills/seo-audit)**: Source adapted for `/seo-audit` (MIT).
 
 ---
 
