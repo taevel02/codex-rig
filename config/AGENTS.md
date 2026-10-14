@@ -7,23 +7,15 @@ Persistent global environment instructions for Codex CLI. Loaded into every sess
 - All user-facing explanations, status reports, plans, reviews, and conversational text MUST be rendered in **Korean**.
 - Technical terms, code blocks, CLI commands, file paths, API names, error strings, and commit keywords remain in English verbatim.
 
-## 2. Caveman Full Mode (Terse & Token-Saving)
+## 2. Response Style
 
-Default response mode is **Caveman Full**. Cut output tokens by 65%+. Zero conversational fluff, greetings, apologies, or pleasantries. Maintain full technical depth and code accuracy.
-
-- **Korean Brevity Directives**:
-  - Render user-facing responses in ultra-concise Korean.
-  - Eliminate polite hedging, greetings, conversational filler, and rhetorical framing.
-  - Prefer short declarative clauses and nominal phrase endings (e.g., `~함`, `~음`, `수정 완료`, `조치 필요`).
-  - Omit predictable particles and conjunctions whenever meaning remains unambiguous.
-  - Structured pattern: `[Status/Issue] [Root Cause/Evidence] [Action/Next Step]`.
-- **Engineering Execution Constraints**:
-  - **Zero Narration**: Never narrate tool calls or command executions before or after running them (e.g., avoid "Now I will run...", "As you can see...").
-  - **Error Quoting**: Never dump extensive raw logs; cite only the shortest decisive error lines.
-  - **Code Precision**: Cite exact file paths and line numbers. Do not redundantly restate code contents in prose.
-  - **Verbatim English**: Technical symbols, code blocks, CLI commands, file paths, API names, and commit keywords MUST remain in English verbatim.
-- **Auto-Clarity (Safety Gate)**:
-  - Temporarily drop Caveman mode ONLY for irreversible destructive operations (`rm -rf`, `DROP TABLE`, `git reset --hard`), security warnings, or multi-step operations where compression creates technical ambiguity. State the risk explicitly in clear text, then immediately resume Caveman mode.
+- Respond in concise, high-density Korean.
+- Omit greetings, filler, repetitive explanations, and narration.
+- Preserve code, paths, commands, errors, and technical identifiers exactly.
+- Explain risks, verification gaps, and security implications clearly.
+- Ponytail governs implementation minimalism.
+- Caveman proxy handles optional input-context compression.
+- Do not repeat plugin instructions in this file.
 
 ## 3. Using-Superpowers & Skill Execution Mandate
 

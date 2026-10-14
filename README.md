@@ -1,6 +1,6 @@
 # Codex Rig
 
-**Codex Rig** is an automated, modular, and minimalist configuration repository tailored specifically for the **Codex CLI** environment. It provisions global agent instructions, Korean UX enforcement, token-saving terse response modes (caveman), git atomic commit protocols, and a focused suite of engineering skills (Waza + local core).
+**Codex Rig** is an automated, modular, and minimalist configuration repository tailored specifically for the **Codex CLI** environment. It provisions global agent instructions, Korean UX enforcement, concise response rules, optional Caveman input compression, Ponytail hooks, git atomic commit protocols, and a focused suite of engineering skills (Waza + local core).
 
 ---
 
@@ -10,7 +10,7 @@
 - **Global Instructions (`~/.codex/AGENTS.md`)**:
   - **Korean UX Enforcement**: Mandatory Korean responses for all user-facing explanations, plans, and reviews, while preserving technical symbols, code blocks, and logs in English.
   - **Using-Superpowers Mandate**: Anti-rationalization gate enforcing proactive skill execution (`/think`, `/hunt`, `/check`, etc.) before code is written.
-  - **Caveman Mode**: Terse, high-density, token-saving communication without conversational fluff.
+  - **Response Style**: Concise Korean communication without conversational filler.
   - **Atomic Commit Protocol**: Standardized 1-line Conventional Commits upon completing verified units of work.
 - **Core Engineering Skills Suite**:
   - Upstream `tw93/Waza` (`plugins/waza`): The gold-standard software engineering workflow skills.
@@ -31,6 +31,12 @@ Apply symlinks to `~/.codex/` and `~/.agents/skills/`:
 ```bash
 ./install.sh
 ```
+
+### Ponytail and Caveman
+
+`install.sh` installs Caveman's Codex skills without its `SessionStart` hook, disables Caveman routing, and installs Ponytail through the Codex plugin marketplace. Preview with `./install.sh --dry-run`; set `CODEX_RIG_TOKEN_TOOLS=0` to skip these tools. `scripts/setup-token-tools.sh` can also run on its own.
+
+Restart Codex, then review and trust Ponytail hooks with `/hooks`. Use `caveman codex` when you want the optional local input compression proxy; plain `codex` does not use that proxy.
 
 ---
 

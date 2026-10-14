@@ -25,7 +25,7 @@ for arg in "$@"; do
 done
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CODEX_HOME="${HOME}/.codex"
+CODEX_HOME="${CODEX_HOME:-${HOME}/.codex}"
 AGENTS_HOME="${HOME}/.agents"
 
 if [ "$DRY_RUN" = true ]; then
@@ -114,7 +114,9 @@ echo ""
 
 # 4. Discover and Install Skills (~/.agents/skills)
 echo -e "${BOLD}Installing Skills (~/.agents/skills)${NC}"
-mkdir -p "${AGENTS_HOME}/skills"
+if [ "$DRY_RUN" = false ]; then
+    mkdir -p "${AGENTS_HOME}/skills"
+fi
 SKILL_DIRS=("${SCRIPT_DIR}/skills")
 if [ -d "${SCRIPT_DIR}/plugins" ]; then
     for plugin_skills in "${SCRIPT_DIR}/plugins/"*/skills; do
@@ -137,10 +139,18 @@ done
 
 # 5. Directory Link for Codex CLI Compatibility
 if [ "$DRY_RUN" = true ]; then
-    echo -e "\n  ${YELLOW}[DRY-RUN]${NC} Link ~/.codex/skills -> ~/.agents/skills"
+    echo -e "\n  ${YELLOW}[DRY-RUN]${NC} Link ${CODEX_HOME}/skills -> ${AGENTS_HOME}/skills"
 else
     ln -sfn "${AGENTS_HOME}/skills" "${CODEX_HOME}/skills"
-    echo -e "\n  ${GREEN}✓${NC} ${BOLD}Codex Skills Link${NC}\n     ${DIM}-> ~/.codex/skills -> ~/.agents/skills${NC}"
+    echo -e "\n  ${GREEN}✓${NC} ${BOLD}Codex Skills Link${NC}\n     ${DIM}-> ${CODEX_HOME}/skills -> ${AGENTS_HOME}/skills${NC}"
+fi
+
+if [ "${CODEX_RIG_TOKEN_TOOLS:-1}" = "1" ]; then
+    if [ "$DRY_RUN" = true ]; then
+        bash "${SCRIPT_DIR}/scripts/setup-token-tools.sh" --dry-run
+    else
+        bash "${SCRIPT_DIR}/scripts/setup-token-tools.sh"
+    fi
 fi
 
 echo ""

@@ -4,7 +4,7 @@ Repository guidelines for agents working on this repository (Codex Rig).
 
 ## Core Context
 
-Modular configuration repository tailored specifically for Codex CLI. It provisions global instructions, Korean UX, terse communication (caveman), engineering skills (Waza + local core), and automated symlinks to `~/.codex/` and `~/.agents/skills/`.
+Modular configuration repository tailored specifically for Codex CLI. It provisions global instructions, concise Korean response rules, engineering skills (Waza + local core), optional Caveman input compression, the Ponytail plugin, and automated symlinks to `~/.codex/` and `~/.agents/skills/`.
 
 ## Workflows & Verification
 
